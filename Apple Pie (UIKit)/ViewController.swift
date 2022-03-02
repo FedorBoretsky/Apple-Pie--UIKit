@@ -23,20 +23,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guessedWordLabel.font = UIFont.monospacedSystemFont(ofSize: 30, weight: .black)
-        setupLetterButtons()
         newRound()
         updateUI()
     }
-    
-    private func setupLetterButtons() {
-        let normalButtonColor = #colorLiteral(red: 0.166226089, green: 0.7145680189, blue: 0.2496848106, alpha: 1)
-        for button in letterButtons {
-            button.setTitleColor(normalButtonColor, for: .normal)
-            button.setTitleColor(.systemGray, for: .disabled)
-            button.titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .black)
-        }
-    }
-    
+        
     func newRound() {
         game = GuessTheWordGameModel(askedWord: "Ниагара Дрим", maximumMistakes: 7)
     }
@@ -66,6 +56,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Button style constants
+    
     private let buttonFontSize: CGFloat = 16
     private let activeButtonColor = #colorLiteral(red: 0.166226089, green: 0.7145680189, blue: 0.2496848106, alpha: 1)
     private let activeButtonFontWeight = UIFont.Weight.bold
