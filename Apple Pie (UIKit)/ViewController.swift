@@ -45,14 +45,10 @@ class ViewController: UIViewController {
     
     func updateUI() {
         resourcesImage.image = UIImage(named: "Tree \(game.howManyMistakesCanBeMade)")
-        guessedWordLabel.text = game.guessedResult // spaceApart(game.guessedResult)
+        guessedWordLabel.text = game.guessedResult
         updateLetterButtons()
     }
-    
-//    func spaceApart(_ word: String) -> String {
-//        return word.map{ String($0) }.joined(separator: " ")
-//    }
-    
+        
     func updateLetterButtons() {
         for button in letterButtons {
             let letter = button.titleLabel?.text ?? " "
