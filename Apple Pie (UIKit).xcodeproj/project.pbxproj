@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F26FDBB27B2FF5F00B767CB /* GuessTheWordGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */; };
 		9F7CBDB927AFDBF7008C27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */; };
 		9F7CBDBB27AFDBF7008C27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */; };
 		9F7CBDBD27AFDBF7008C27CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBC27AFDBF7008C27CB /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheWordGameModel.swift; sourceTree = "<group>"; };
 		9F7CBDB527AFDBF7008C27CB /* Apple Pie (UIKit).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie (UIKit).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */,
 				9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */,
+				9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */,
 				9F7CBDBC27AFDBF7008C27CB /* ViewController.swift */,
 				9F7CBDBE27AFDBF7008C27CB /* Main.storyboard */,
 				9F7CBDC127AFDBF8008C27CB /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F7CBDBD27AFDBF7008C27CB /* ViewController.swift in Sources */,
+				9F26FDBB27B2FF5F00B767CB /* GuessTheWordGameModel.swift in Sources */,
 				9F7CBDB927AFDBF7008C27CB /* AppDelegate.swift in Sources */,
 				9F7CBDBB27AFDBF7008C27CB /* SceneDelegate.swift in Sources */,
 			);
@@ -297,6 +301,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +330,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
