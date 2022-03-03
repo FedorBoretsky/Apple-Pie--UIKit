@@ -15,7 +15,9 @@ class AppleTreeViewController: UIViewController {
     @IBOutlet weak var guessedWordLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
     @IBOutlet weak var gameKeyboard: UIStackView!
-    @IBOutlet weak var roundResult: UILabel!
+    @IBOutlet weak var roundEndUI: UIStackView!
+    @IBOutlet weak var aboutWord: UILabel!
+    @IBOutlet weak var resultMessage: UILabel!
     @IBOutlet weak var gameStatsLabel: UILabel!
     
     // MARK: - Controller
@@ -41,7 +43,19 @@ class AppleTreeViewController: UIViewController {
     
     func updateUI() {
         resourcesImage.image = UIImage(named: "Tree \(game.howManyMistakesCanBeMade)")
-//        switch game.status
+        switch game.status {
+        case .keepPlaying:
+            gameKeyboard.isHidden = false
+            roundEndUI.isHidden = true
+        case .failure:
+            gameKeyboard.isHidden = true
+            roundEndUI.isHidden = false
+            resultMessage.text = "Вы проиграли. Не растраивайтесь, получится в следующий раз."
+        case .victory:
+            gameKeyboard.isHidden = true
+            roundEndUI.isHidden = false
+            resultMessage.text = "Вы угадали!"
+        }
         guessedWordLabel.text = game.guessedResult
         updateLetterButtons()
     }
@@ -65,7 +79,7 @@ class AppleTreeViewController: UIViewController {
     // MARK: - Button style constants
     
     private static let buttonFontSize: CGFloat = 20
-    private static let activeButtonColor = #colorLiteral(red: 0.166226089, green: 0.7145680189, blue: 0.2496848106, alpha: 1)
+    private static let activeButtonColor = UIColor(named: "AccentColor")!
     private static let activeButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.bold)
     private static let disabledButtonColor = UIColor.systemGray
     private static let disabledButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.light)
@@ -77,5 +91,8 @@ class AppleTreeViewController: UIViewController {
         game.choose(letter: letter)
     }
     
+    @IBAction func tapNewRound() {
+        newRound()
+    }
 }
 
