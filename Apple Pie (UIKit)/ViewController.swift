@@ -45,23 +45,23 @@ class ViewController: UIViewController {
             let isAlreadyChoosen = game.alreadyChoosenLetters.contains(letter.lowercased())
             if isAlreadyChoosen {
                 button.isEnabled = false
-                button.setTitleColor(disabledButtonColor, for: .disabled)
-                button.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize, weight: disabledButtonFontWeight)
+                button.setTitleColor(Self.disabledButtonColor, for: .disabled)
+                button.titleLabel?.font = Self.disabledButtonFont
             } else {
                 button.isEnabled = true
-                button.setTitleColor(activeButtonColor, for: .disabled)
-                button.titleLabel?.font = UIFont.systemFont(ofSize: buttonFontSize, weight: activeButtonFontWeight)
+                button.setTitleColor(Self.activeButtonColor, for: .disabled)
+                button.titleLabel?.font = Self.activeButtonFont
             }
         }
     }
     
     // MARK: - Button style constants
     
-    private let buttonFontSize: CGFloat = 16
-    private let activeButtonColor = #colorLiteral(red: 0.166226089, green: 0.7145680189, blue: 0.2496848106, alpha: 1)
-    private let activeButtonFontWeight = UIFont.Weight.bold
-    private let disabledButtonColor = UIColor.systemGray
-    private let disabledButtonFontWeight = UIFont.Weight.light
+    private static let buttonFontSize: CGFloat = 16
+    private static let activeButtonColor = #colorLiteral(red: 0.166226089, green: 0.7145680189, blue: 0.2496848106, alpha: 1)
+    private static let activeButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.bold)
+    private static let disabledButtonColor = UIColor.systemGray
+    private static let disabledButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.light)
 
     // MARK: - IBActions
     
