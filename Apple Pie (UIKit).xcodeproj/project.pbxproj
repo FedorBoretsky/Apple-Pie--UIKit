@@ -10,7 +10,7 @@
 		9F26FDBB27B2FF5F00B767CB /* GuessTheWordGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */; };
 		9F7CBDB927AFDBF7008C27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */; };
 		9F7CBDBB27AFDBF7008C27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */; };
-		9F7CBDBD27AFDBF7008C27CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBC27AFDBF7008C27CB /* ViewController.swift */; };
+		9F7CBDBD27AFDBF7008C27CB /* AppleTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBC27AFDBF7008C27CB /* AppleTreeViewController.swift */; };
 		9F7CBDC027AFDBF7008C27CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBE27AFDBF7008C27CB /* Main.storyboard */; };
 		9F7CBDC227AFDBF8008C27CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CBDC127AFDBF8008C27CB /* Assets.xcassets */; };
 		9F7CBDC527AFDBF8008C27CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F7CBDC327AFDBF8008C27CB /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		9F7CBDB527AFDBF7008C27CB /* Apple Pie (UIKit).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie (UIKit).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F7CBDBC27AFDBF7008C27CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F7CBDBC27AFDBF7008C27CB /* AppleTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleTreeViewController.swift; sourceTree = "<group>"; };
 		9F7CBDBF27AFDBF7008C27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F7CBDC127AFDBF8008C27CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F7CBDC427AFDBF8008C27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 				9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */,
 				9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */,
 				9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */,
-				9F7CBDBC27AFDBF7008C27CB /* ViewController.swift */,
+				9F7CBDBC27AFDBF7008C27CB /* AppleTreeViewController.swift */,
 				9F7CBDBE27AFDBF7008C27CB /* Main.storyboard */,
 				9F7CBDC127AFDBF8008C27CB /* Assets.xcassets */,
 				9F7CBDC327AFDBF8008C27CB /* LaunchScreen.storyboard */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F7CBDBD27AFDBF7008C27CB /* ViewController.swift in Sources */,
+				9F7CBDBD27AFDBF7008C27CB /* AppleTreeViewController.swift in Sources */,
 				9F26FDBB27B2FF5F00B767CB /* GuessTheWordGameModel.swift in Sources */,
 				9F7CBDB927AFDBF7008C27CB /* AppDelegate.swift in Sources */,
 				9F7CBDBB27AFDBF7008C27CB /* SceneDelegate.swift in Sources */,

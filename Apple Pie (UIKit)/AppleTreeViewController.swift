@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AppleTreeViewController.swift
 //  Apple Pie (UIKit)
 //
 //  Created by Fedor Boretskiy on 06.02.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AppleTreeViewController: UIViewController {
     
     // MARK: - IBOutlets
     

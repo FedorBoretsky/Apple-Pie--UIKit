@@ -32,13 +32,12 @@ struct GuessTheWordGameModel {
     /// Memorizes the choosen letters and counts a mistake if it happens.
     /// - Parameter letter: The letter suggested by the player.
     mutating func choose(letter: String) {
-        let lowerCasedLetter = letter.lowercased()
-        alreadyChoosenLetters.append(lowerCasedLetter)
-        if !askedWord.contains(Character(lowerCasedLetter)) {
+        let lowercasedLetter = letter.lowercased()
+        let lowercasedWord = askedWord.lowercased()
+        alreadyChoosenLetters.append(lowercasedLetter)
+        if !lowercasedWord.contains(Character(lowercasedLetter)) {
             numberOfMistakes += 1
         }
-        // TODO: Remove print()
-        print("alreadyChoosenLetters: ", alreadyChoosenLetters)
     }
 
     /// Shows correctly guessed letters in their places. Unknown letters are masked.
