@@ -57,7 +57,7 @@ class AppleTreeViewController: UIViewController {
     
     // MARK: - Button style constants
     
-    private static let buttonFontSize: CGFloat = 16
+    private static let buttonFontSize: CGFloat = 20
     private static let activeButtonColor = #colorLiteral(red: 0.166226089, green: 0.7145680189, blue: 0.2496848106, alpha: 1)
     private static let activeButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.bold)
     private static let disabledButtonColor = UIColor.systemGray
