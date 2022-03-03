@@ -12,13 +12,17 @@ class AppleTreeViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet weak var resourcesImage: UIImageView!
-    @IBOutlet weak var guessedWordLabel: UILabel!
+    
+    @IBOutlet weak var playingControls: UIStackView!
+    @IBOutlet weak var guessedWord: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
-    @IBOutlet weak var gameKeyboard: UIStackView!
-    @IBOutlet weak var roundEndUI: UIStackView!
-    @IBOutlet weak var aboutWord: UILabel!
+    
+    @IBOutlet weak var resultControls: UIStackView!
     @IBOutlet weak var resultMessage: UILabel!
-    @IBOutlet weak var gameStatsLabel: UILabel!
+    @IBOutlet weak var capitalCity: UILabel!
+    @IBOutlet weak var countryName: UILabel!
+    
+    @IBOutlet weak var gameStats: UILabel!
     
     // MARK: - Controller
     
@@ -30,9 +34,12 @@ class AppleTreeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guessedWordLabel.font = UIFont.monospacedSystemFont(ofSize: 30, weight: .black)
+        // Style setup
+        guessedWord.font = Self.guessedWordFont
+        capitalCity.font = Self.guessedWordFont
+        countryName.font = Self.guessedWordFont
+        // Start game
         newRound()
-        updateUI()
     }
         
     func newRound() {
@@ -45,18 +52,20 @@ class AppleTreeViewController: UIViewController {
         resourcesImage.image = UIImage(named: "Tree \(game.howManyMistakesCanBeMade)")
         switch game.status {
         case .keepPlaying:
-            gameKeyboard.isHidden = false
-            roundEndUI.isHidden = true
+            playingControls.isHidden = false
+            resultControls.isHidden = true
+            guessedWord.text = game.guessedResult
         case .failure:
-            gameKeyboard.isHidden = true
-            roundEndUI.isHidden = false
+            playingControls.isHidden = true
+            resultControls.isHidden = false
             resultMessage.text = "Вы проиграли. Не растраивайтесь, получится в следующий раз."
+            capitalCity.text = game.askedWord
         case .victory:
-            gameKeyboard.isHidden = true
-            roundEndUI.isHidden = false
+            playingControls.isHidden = true
+            resultControls.isHidden = false
             resultMessage.text = "Вы угадали!"
+            capitalCity.text = game.askedWord
         }
-        guessedWordLabel.text = (game.status == .keepPlaying) ? game.guessedResult : game.askedWord
         updateLetterButtons()
     }
         
@@ -75,6 +84,10 @@ class AppleTreeViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - Text style constants
+    
+    private static let guessedWordFont = UIFont.monospacedSystemFont(ofSize: 30, weight: .black)
     
     // MARK: - Button style constants
     
