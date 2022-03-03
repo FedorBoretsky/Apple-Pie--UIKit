@@ -56,7 +56,7 @@ class AppleTreeViewController: UIViewController {
             roundEndUI.isHidden = false
             resultMessage.text = "Вы угадали!"
         }
-        guessedWordLabel.text = game.guessedResult
+        guessedWordLabel.text = (game.status == .keepPlaying) ? game.guessedResult : game.askedWord
         updateLetterButtons()
     }
         
