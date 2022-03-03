@@ -51,25 +51,24 @@ struct GuessTheWordGameModel {
         return (remainder > 0) ? remainder : 0
     }
     
-//    // MARK: - Status
-//    
-//    /// Still play, loss, win?
-//    var status: GameStatus {
-//        if numberOfMistakes > maximumMistakes {
-//            return .failure
-//        }
-//        if guessedResult.contains(Self.maskingSymbol) {
-//            return .keepPlaying
-//        } else {
-//            return .victory
-//        }
-//    }
-//
-//    enum GameStatus {
-//        case keepPlaying
-//        case failure
-//        case victory
-//    }
+    // MARK: - Game status
     
+    enum GameStatus {
+        case keepPlaying
+        case failure
+        case victory
+    }
     
+    /// Still play, loss, win?
+    var status: GameStatus {
+        if numberOfMistakes > maximumMistakes {
+            return .failure
+        }
+        if guessedResult.contains(Self.maskingCharacter) {
+            return .keepPlaying
+        } else {
+            return .victory
+        }
+    }
+
 }

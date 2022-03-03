@@ -14,11 +14,17 @@ class AppleTreeViewController: UIViewController {
     @IBOutlet weak var resourcesImage: UIImageView!
     @IBOutlet weak var guessedWordLabel: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
+    @IBOutlet weak var gameKeyboard: UIStackView!
+    @IBOutlet weak var roundResult: UILabel!
     @IBOutlet weak var gameStatsLabel: UILabel!
     
     // MARK: - Controller
     
-    var game: GuessTheWordGameModel!
+    var game: GuessTheWordGameModel! {
+        didSet {
+            updateUI()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,7 @@ class AppleTreeViewController: UIViewController {
     
     func updateUI() {
         resourcesImage.image = UIImage(named: "Tree \(game.howManyMistakesCanBeMade)")
+//        switch game.status
         guessedWordLabel.text = game.guessedResult
         updateLetterButtons()
     }
@@ -68,7 +75,6 @@ class AppleTreeViewController: UIViewController {
     @IBAction func letterPressed(_ sender: UIButton) {
         let letter = sender.titleLabel?.text ?? " "
         game.choose(letter: letter)
-        updateUI()
     }
     
 }

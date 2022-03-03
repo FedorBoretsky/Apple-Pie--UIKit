@@ -32,6 +32,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roundResult" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mo-5i-5hh">
+                                                <rect key="frame" x="0.0" y="39.5" width="290" height="24.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rYY-bc-hr6">
                                                 <rect key="frame" x="0.0" y="44" width="290" height="145"/>
                                                 <subviews>
@@ -448,6 +455,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="8Mo-5i-5hh"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
@@ -463,9 +475,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gameKeyboard" destination="rYY-bc-hr6" id="VVN-jM-G4M"/>
                         <outlet property="gameStatsLabel" destination="5VC-42-Yb8" id="DWL-2r-5T8"/>
                         <outlet property="guessedWordLabel" destination="lh2-H7-UcA" id="ENc-nt-KZB"/>
                         <outlet property="resourcesImage" destination="GED-cN-NhE" id="dCq-Mm-MXN"/>
+                        <outlet property="roundResult" destination="8Mo-5i-5hh" id="gWZ-I6-Ob9"/>
                         <outletCollection property="letterButtons" destination="cWX-6f-fuD" collectionClass="NSMutableArray" id="9kU-Gs-XgT"/>
                         <outletCollection property="letterButtons" destination="Lnp-HK-FdG" collectionClass="NSMutableArray" id="Qjf-VJ-bh8"/>
                         <outletCollection property="letterButtons" destination="kVb-8K-Xcl" collectionClass="NSMutableArray" id="0gx-lz-FPR"/>
