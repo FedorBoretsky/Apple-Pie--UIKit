@@ -24,7 +24,7 @@ class AppleTreeViewController: UIViewController {
     
     @IBOutlet weak var gameStats: UILabel!
     
-    // MARK: - Controller
+    // MARK: - Lifecycle
     
     var game: GuessTheWordGameModel! {
         didSet {
