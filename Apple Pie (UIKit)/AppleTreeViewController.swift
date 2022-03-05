@@ -14,7 +14,9 @@ class AppleTreeViewController: UIViewController {
     @IBOutlet weak var resourcesImage: UIImageView!
     
     @IBOutlet weak var playingControls: UIStackView!
+    @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var guessedWord: UILabel!
+    @IBOutlet weak var hintSpace: UILabel!
     @IBOutlet var letterButtons: [UIButton]!
     
     @IBOutlet weak var resultControls: UIStackView!
@@ -23,27 +25,33 @@ class AppleTreeViewController: UIViewController {
     @IBOutlet weak var countryName: UILabel!
     
     @IBOutlet weak var gameStats: UILabel!
+    @IBOutlet weak var hintSwitch: UISwitch!
     
     // MARK: - Lifecycle
-    
-    var game: GuessTheWordGameModel! {
-        didSet {
-            updateUI()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Style setup
         guessedWord.font = Self.guessedWordFont
         capitalCity.font = Self.guessedWordFont
-        countryName.font = Self.guessedWordFont
+        countryName.font = Self.countryInfoFont
         // Start game
         newRound()
     }
         
+    // MARK: - Game
+        
+    var game: GuessTheWordGameModel! {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    var capitalProvider = WordToGuessProvider()
+    
     func newRound() {
-        game = GuessTheWordGameModel(askedWord: "Ниагара Дрим", maximumMistakes: 7)
+        let newWord = capitalProvider.selectNewCapital()
+        game = GuessTheWordGameModel(askedWord: newWord, maximumMistakes: 7)
     }
     
     // MARK: - Update
@@ -54,17 +62,16 @@ class AppleTreeViewController: UIViewController {
         case .keepPlaying:
             playingControls.isHidden = false
             resultControls.isHidden = true
-            guessedWord.text = game.guessedResult
-        case .failure:
+            guessedWord.text = game.guessedResult // + (hintSwitch.isOn ? " \(capitalProvider.currentHint)" : "")
+            hintLabel.text = capitalProvider.currentHint
+            hintLabel.layer.opacity = hintSwitch.isOn ? 1 : 0
+            hintSpace.layer.opacity = 0 // hintSwitch.isOn ? 1 : 0
+        case .failure, .victory:
             playingControls.isHidden = true
             resultControls.isHidden = false
-            resultMessage.text = "Вы проиграли. Не растраивайтесь, получится в следующий раз."
-            capitalCity.text = game.askedWord
-        case .victory:
-            playingControls.isHidden = true
-            resultControls.isHidden = false
-            resultMessage.text = "Вы угадали!"
-            capitalCity.text = game.askedWord
+            resultMessage.text = game.status == .victory ? "Вы угадали!" : "Не угадали. Не растраивайтесь, получится в следующий раз."
+            capitalCity.text = capitalProvider.currentWord
+            countryName.text = capitalProvider.currentInfo
         }
         updateLetterButtons()
     }
@@ -88,7 +95,8 @@ class AppleTreeViewController: UIViewController {
     // MARK: - Text style constants
     
     private static let guessedWordFont = UIFont.monospacedSystemFont(ofSize: 30, weight: .black)
-    
+    private static let countryInfoFont = UIFont.monospacedSystemFont(ofSize: 20, weight: .black)
+
     // MARK: - Button style constants
     
     private static let buttonFontSize: CGFloat = 20
@@ -107,5 +115,10 @@ class AppleTreeViewController: UIViewController {
     @IBAction func tapNewRound() {
         newRound()
     }
+    
+    @IBAction func tapHintSwitch() {
+        updateUI()
+    }
+    
 }
 
