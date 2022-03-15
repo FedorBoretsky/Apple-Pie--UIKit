@@ -7,12 +7,14 @@
 
 struct WordToGuessProvider {
     
-    mutating public func selectNewCapital() -> String {
-        var candidate: WordToGuess
+    private let collection: GuessingCollection
+    
+    mutating public func chooseNewWord() -> String {
+        var candidate: GuessingCollection.WordToGuess
         
-        // Find a city that hasn't been offered recently.
+        // Find an element that hasn't been offered recently.
         repeat {
-            candidate = Capitals.list.randomElement()!
+            candidate = collection.list.randomElement()!
         } while recentSelection.contains(candidate)
         
         // Update history.
@@ -21,7 +23,7 @@ struct WordToGuessProvider {
             recentSelection.removeFirst()
         }
         
-        // Return the value needed to start a new game round.
+        // Return the value for new game round.
         return candidate.word
     }
     
@@ -37,7 +39,16 @@ struct WordToGuessProvider {
         recentSelection.last!.hint
     }
     
-    private var recentSelection: [WordToGuess] = []
-    private let recentSelectionMaxCount = min(10, Capitals.list.count / 2)
+    public var disabledHintLabel: String {
+        collection.disabledHintLabel
+    }
+    
+    private var recentSelection: [GuessingCollection.WordToGuess] = []
+    private let recentSelectionMaxCount: Int
+    
+    init(collection: GuessingCollection) {
+        self.collection = collection
+        recentSelectionMaxCount = min(10, collection.list.count / 2)
+    }
     
 }

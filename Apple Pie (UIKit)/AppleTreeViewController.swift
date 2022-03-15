@@ -47,10 +47,10 @@ class AppleTreeViewController: UIViewController {
         }
     }
     
-    var capitalProvider = WordToGuessProvider()
+    var wordsProvider = WordToGuessProvider(collection: GuessingCollection.capitals)
     
     func newRound() {
-        let newWord = capitalProvider.selectNewCapital()
+        let newWord = wordsProvider.chooseNewWord()
         game = GuessTheWordGameModel(askedWord: newWord, maximumMistakes: 7)
     }
     
@@ -63,15 +63,15 @@ class AppleTreeViewController: UIViewController {
             playingControls.isHidden = false
             resultControls.isHidden = true
             guessedWord.text = game.guessedResult // + (hintSwitch.isOn ? " \(capitalProvider.currentHint)" : "")
-            hintLabel.text = capitalProvider.currentHint
-            hintLabel.layer.opacity = hintSwitch.isOn ? 1 : 0
-            hintSpace.layer.opacity = 0 // hintSwitch.isOn ? 1 : 0
+            hintLabel.text = hintSwitch.isOn ? wordsProvider.currentHint : wordsProvider.disabledHintLabel
+            
+//            hintLabel.layer.opacity = hintSwitch.isOn ? 1 : 0
         case .failure, .victory:
             playingControls.isHidden = true
             resultControls.isHidden = false
             resultMessage.text = game.status == .victory ? "Вы угадали!" : "Не угадали. Не растраивайтесь, получится в следующий раз."
-            capitalCity.text = capitalProvider.currentWord
-            countryName.text = capitalProvider.currentInfo
+            capitalCity.text = wordsProvider.currentWord
+            countryName.text = wordsProvider.currentInfo
         }
         updateLetterButtons()
     }
@@ -82,11 +82,13 @@ class AppleTreeViewController: UIViewController {
             let isAlreadyChoosen = game.alreadyChoosenLetters.contains(letter.lowercased())
             if isAlreadyChoosen {
                 button.isEnabled = false
-                button.setTitleColor(Self.disabledButtonColor, for: .disabled)
+                button.backgroundColor = Self.disabledButtonBackgroundColor
+                button.setTitleColor(Self.disabledButtonTextColor, for: .disabled)
                 button.titleLabel?.font = Self.disabledButtonFont
             } else {
                 button.isEnabled = true
-                button.setTitleColor(Self.activeButtonColor, for: .disabled)
+                button.backgroundColor = Self.activeButtonBackgroundColor
+                button.setTitleColor(Self.activeButtonTextColor, for: .normal)
                 button.titleLabel?.font = Self.activeButtonFont
             }
         }
@@ -100,9 +102,11 @@ class AppleTreeViewController: UIViewController {
     // MARK: - Button style constants
     
     private static let buttonFontSize: CGFloat = 20
-    private static let activeButtonColor = UIColor(named: "AccentColor")!
+    private static let activeButtonTextColor = UIColor.white
+    private static let activeButtonBackgroundColor = UIColor(named: "AccentColor")!
     private static let activeButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.bold)
-    private static let disabledButtonColor = UIColor.systemGray
+    private static let disabledButtonTextColor = UIColor.white
+    private static let disabledButtonBackgroundColor = UIColor.systemGray3
     private static let disabledButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.light)
 
     // MARK: - IBActions
