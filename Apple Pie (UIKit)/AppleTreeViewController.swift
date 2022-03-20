@@ -114,7 +114,7 @@ class AppleTreeViewController: UIViewController {
     private static let buttonFontSize: CGFloat = 20
     private static let activeButtonTextColor = UIColor.white
     private static let activeButtonBackgroundColor = UIColor(named: "AccentColor")!
-    private static let activeButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.bold)
+    private static let activeButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.medium)
     private static let disabledButtonTextColor = UIColor.white
     private static let disabledButtonBackgroundColor = UIColor.systemGray3
     private static let disabledButtonFont = UIFont.systemFont(ofSize: buttonFontSize, weight: UIFont.Weight.light)
