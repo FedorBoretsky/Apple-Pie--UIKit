@@ -28,9 +28,6 @@ class AppleTreeViewController: UIViewController {
     @IBOutlet weak var gameStatisticsLabel: UILabel!
     @IBOutlet weak var hintSwitch: UISwitch!
     
-    // MARK: - Properties
-    
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -41,7 +38,7 @@ class AppleTreeViewController: UIViewController {
         countryName.font = Self.countryInfoFont
         bigFlag.font = Self.bigFlagFont
         // Start game
-        newRound()
+        newEpisode()
     }
         
     // MARK: - Game
@@ -51,9 +48,12 @@ class AppleTreeViewController: UIViewController {
     }
     
     var wordsProvider = WordToGuessProvider(collection: GuessingCollection.capitals)
-    var gameStatistics = GameStatistics()
+    
+    var gameStatistics = GameStatistics() {
+        didSet { updateUI() }
+    }
 
-    func newRound() {
+    func newEpisode() {
         let newWord = wordsProvider.chooseNewWord()
         game = GuessTheWordGameModel(askedWord: newWord, maximumMistakes: 7)
     }
@@ -126,13 +126,16 @@ class AppleTreeViewController: UIViewController {
         game.choose(letter: letter)
     }
     
-    @IBAction func tapNewRound() {
-        newRound()
+    @IBAction func tapContinue() {
+        newEpisode()
     }
     
     @IBAction func tapHintSwitch() {
         updateUI()
     }
     
+    @IBAction func resetStatistics() {
+        gameStatistics = GameStatistics()
+    }
 }
 
