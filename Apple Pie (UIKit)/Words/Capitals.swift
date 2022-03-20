@@ -7,6 +7,7 @@
 
 extension GuessingCollection {
     static let capitals = GuessingCollection(
+        hintTypeDescription: "🏳️",
         list: [
             WordToGuess(word: "Тирана", info: "Столица Албании", hint: "🇦🇱"),
             WordToGuess(word: "Алжир", info: "Столица Алжира", hint: "🇩🇿"),
@@ -16,6 +17,6 @@ extension GuessingCollection {
             WordToGuess(word: "Буэнос-Айрес", info: "Столица Аргентины", hint: "🇦🇷"),
             WordToGuess(word: "Ереван", info: "Столица Армении", hint: "🇦🇲"),
             WordToGuess(word: "Канберра", info: "Столица Австралии", hint: "🇦🇺"),
-        ],
-        hintTypeDescription: "🏳️")    
+        ]
+        )
 }
