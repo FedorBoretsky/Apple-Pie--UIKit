@@ -11,22 +11,26 @@ class AppleTreeViewController: UIViewController {
     
     // MARK: - IBOutlets
     
+    // Number of attempts indicator
     @IBOutlet weak var resourcesImage: UIImageView!
     
+    // Playing controls
     @IBOutlet weak var playingControls: UIStackView!
-    @IBOutlet weak var hintLabel: UILabel!
     @IBOutlet weak var guessedWord: UILabel!
-    @IBOutlet weak var hintSpace: UILabel!
+    @IBOutlet weak var hintLabel: UILabel!
+    @IBOutlet weak var hintSwitch: UISwitch!
     @IBOutlet var letterButtons: [UIButton]!
     
+    // Episode result's controls
     @IBOutlet weak var resultControls: UIStackView!
     @IBOutlet weak var resultMessage: UILabel!
     @IBOutlet weak var capitalCity: UILabel!
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var bigFlag: UILabel!
     
+    // Statistics controls
     @IBOutlet weak var gameStatisticsLabel: UILabel!
-    @IBOutlet weak var hintSwitch: UISwitch!
+    @IBOutlet weak var gameStatisticsResetButton: UIButton!
     
     // MARK: - Lifecycle
     
@@ -69,7 +73,6 @@ class AppleTreeViewController: UIViewController {
             guessedWord.text = game.guessedResult
             hintLabel.text = hintSwitch.isOn ? wordsProvider.currentHint : wordsProvider.hintTypeDescription
         case .failure, .victory:
-            gameStatistics.addResult(isEpisodeSuccessful: game.status == .victory)
             playingControls.isHidden = true
             resultControls.isHidden = false
             resultMessage.text = game.status == .victory ? "Вы угадали!" : "Не угадали. Не растраивайтесь, получится в следующий раз."
@@ -100,7 +103,11 @@ class AppleTreeViewController: UIViewController {
     }
     
     func updateGameStatisticsLabel() {
+        // Message
         gameStatisticsLabel.text = "\(gameStatistics.successfulPercent)% (выиграли \(gameStatistics.successfulEpisodes) из \(gameStatistics.totalEpisodes))"
+        
+        // Show the reset button only if there is something to reset
+        gameStatisticsResetButton.isHidden = (gameStatistics.totalEpisodes == 0)
     }
     
     // MARK: - Text style constants
@@ -124,6 +131,9 @@ class AppleTreeViewController: UIViewController {
     @IBAction func letterPressed(_ sender: UIButton) {
         let letter = sender.titleLabel?.text ?? " "
         game.choose(letter: letter)
+        if game.status != .keepPlaying {
+            gameStatistics.addResult(isEpisodeSuccessful: game.status == .victory)
+        }
     }
     
     @IBAction func tapContinue() {
