@@ -39,8 +39,8 @@ struct WordToGuessProvider {
         recentSelection.last!.hint
     }
     
-    public var disabledHintLabel: String {
-        collection.disabledHintLabel
+    public var hintTypeDescription: String {
+        collection.hintTypeDescription
     }
     
     private var recentSelection: [GuessingCollection.WordToGuess] = []

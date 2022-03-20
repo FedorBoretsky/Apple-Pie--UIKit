@@ -22,7 +22,7 @@ struct GuessTheWordGameModel {
     // MARK: - Сharacter conventions
     
     private static let nonHiddenCharacters = ["-", " "]
-    private static let maskingCharacter = Character("_")
+    private static let maskingCharacter = Character("?")
 
     // MARK: - Process support
     
