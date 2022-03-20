@@ -110,14 +110,14 @@ class AppleTreeViewController: UIViewController {
         gameStatisticsResetButton.isHidden = (gameStatistics.totalEpisodes == 0)
     }
     
-    // MARK: - Text style constants
+    // MARK: - Visual style constants
     
+    // Text
     private static let guessedWordFont = UIFont.monospacedSystemFont(ofSize: 30, weight: .black)
     private static let countryInfoFont = UIFont.monospacedSystemFont(ofSize: 20, weight: .black)
     private static let bigFlagFont = UIFont.monospacedSystemFont(ofSize: 50, weight: .black)
 
-    // MARK: - Button style constants
-    
+    // Keyboard buttons
     private static let buttonFontSize: CGFloat = 20
     private static let activeButtonTextColor = UIColor.white
     private static let activeButtonBackgroundColor = UIColor(named: "AccentColor")!
