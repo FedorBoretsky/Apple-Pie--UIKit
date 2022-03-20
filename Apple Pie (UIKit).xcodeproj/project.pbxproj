@@ -10,8 +10,8 @@
 		9F1177B527D372520016DDCA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1177B427D372520016DDCA /* Capitals.swift */; };
 		9F1177B727D3785F0016DDCA /* WordToGuessProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1177B627D3785F0016DDCA /* WordToGuessProvider.swift */; };
 		9F1B70A227E72ABE00CD0B0A /* GameStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1B70A127E72ABE00CD0B0A /* GameStatistics.swift */; };
+		9F24DFBB27E785A500E10819 /* GuessingCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24DFBA27E785A500E10819 /* GuessingCollection.swift */; };
 		9F26FDBB27B2FF5F00B767CB /* GuessTheWordGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */; };
-		9F67AFC427E7841200EB19C2 /* GuessingCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67AFC327E7841200EB19C2 /* GuessingCollection.swift */; };
 		9F7CBDB927AFDBF7008C27CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */; };
 		9F7CBDBB27AFDBF7008C27CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */; };
 		9F7CBDBD27AFDBF7008C27CB /* AppleTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7CBDBC27AFDBF7008C27CB /* AppleTreeViewController.swift */; };
@@ -24,8 +24,8 @@
 		9F1177B427D372520016DDCA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
 		9F1177B627D3785F0016DDCA /* WordToGuessProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordToGuessProvider.swift; sourceTree = "<group>"; };
 		9F1B70A127E72ABE00CD0B0A /* GameStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatistics.swift; sourceTree = "<group>"; };
+		9F24DFBA27E785A500E10819 /* GuessingCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessingCollection.swift; sourceTree = "<group>"; };
 		9F26FDBA27B2FF5F00B767CB /* GuessTheWordGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheWordGameModel.swift; sourceTree = "<group>"; };
-		9F67AFC327E7841200EB19C2 /* GuessingCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingCollection.swift; sourceTree = SOURCE_ROOT; };
 		9F7CBDB527AFDBF7008C27CB /* Apple Pie (UIKit).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Pie (UIKit).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F7CBDB827AFDBF7008C27CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F7CBDBA27AFDBF7008C27CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				9F1177B627D3785F0016DDCA /* WordToGuessProvider.swift */,
-				9F67AFC327E7841200EB19C2 /* GuessingCollection.swift */,
+				9F24DFBA27E785A500E10819 /* GuessingCollection.swift */,
 				9F1177B427D372520016DDCA /* Capitals.swift */,
 			);
 			path = Words;
@@ -162,10 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F1177B527D372520016DDCA /* Capitals.swift in Sources */,
+				9F24DFBB27E785A500E10819 /* GuessingCollection.swift in Sources */,
 				9F1177B727D3785F0016DDCA /* WordToGuessProvider.swift in Sources */,
 				9F7CBDBD27AFDBF7008C27CB /* AppleTreeViewController.swift in Sources */,
 				9F26FDBB27B2FF5F00B767CB /* GuessTheWordGameModel.swift in Sources */,
-				9F67AFC427E7841200EB19C2 /* GuessingCollection.swift in Sources */,
 				9F1B70A227E72ABE00CD0B0A /* GameStatistics.swift in Sources */,
 				9F7CBDB927AFDBF7008C27CB /* AppDelegate.swift in Sources */,
 				9F7CBDBB27AFDBF7008C27CB /* SceneDelegate.swift in Sources */,
