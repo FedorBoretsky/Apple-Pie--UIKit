@@ -64,8 +64,14 @@ class AppleTreeViewController: UIViewController {
     
     // MARK: - Update UI
     
+    fileprivate func updateResourceImage() {
+        let index = game.howManyMistakesCanBeMade
+        resourcesImage.image = UIImage(named: "Tree \(index)")
+        resourcesImage.backgroundColor = Self.resourcesImageBackground[index]
+    }
+    
     func updateUI() {
-        resourcesImage.image = UIImage(named: "Tree \(game.howManyMistakesCanBeMade)")
+        updateResourceImage()
         switch game.status {
         case .keepPlaying:
             playingControls.isHidden = false
@@ -111,6 +117,18 @@ class AppleTreeViewController: UIViewController {
     }
     
     // MARK: - Visual style constants
+    
+    // Image
+    private static let resourcesImageBackground = [
+        UIColor(#colorLiteral(red: 0.3725490196, green: 0.3411764706, blue: 0.3843137255, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.4666666667, green: 0.4549019608, blue: 0.4980392157, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.5254901961, green: 0.5333333333, blue: 0.5725490196, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.5882352941, green: 0.6117647059, blue: 0.6470588235, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.5764705882, green: 0.7137254902, blue: 0.7725490196, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.568627451, green: 0.8235294118, blue: 0.9058823529, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.6745098039, green: 0.9137254902, blue: 0.9803921569, alpha: 1)),
+        UIColor(#colorLiteral(red: 0.7921568155, green: 0.9411764741, blue: 0.9882352352, alpha: 1)),
+    ]
     
     // Text
     private static let guessedWordFont = UIFont.monospacedSystemFont(ofSize: 30, weight: .black)
