@@ -13,6 +13,7 @@ class AppleTreeViewController: UIViewController {
     
     // Number of attempts indicator
     @IBOutlet weak var resourcesImage: UIImageView!
+    @IBOutlet weak var resourcesBackground: UIView!
     
     // Playing controls
     @IBOutlet weak var playingControls: UIStackView!
@@ -67,11 +68,11 @@ class AppleTreeViewController: UIViewController {
     fileprivate func updateResourceImage() {
         let index = game.howManyMistakesCanBeMade
         resourcesImage.image = UIImage(named: "Tree \(index)")
-        resourcesImage.backgroundColor = Self.resourcesImageBackground[index]
+        resourcesImage.backgroundColor = Self.resourcesImageBackgrounds[index]
+        resourcesBackground.backgroundColor = resourcesImage.backgroundColor
     }
     
     func updateUI() {
-        updateResourceImage()
         switch game.status {
         case .keepPlaying:
             playingControls.isHidden = false
@@ -86,6 +87,7 @@ class AppleTreeViewController: UIViewController {
             countryName.text = wordsProvider.currentInfo
             bigFlag.text = wordsProvider.currentHint
         }
+        updateResourceImage()
         updateLetterButtons()
         updateGameStatisticsLabel()
     }
@@ -119,7 +121,7 @@ class AppleTreeViewController: UIViewController {
     // MARK: - Visual style constants
     
     // Image
-    private static let resourcesImageBackground = [
+    private static let resourcesImageBackgrounds = [
         UIColor(#colorLiteral(red: 0.3725490196, green: 0.3411764706, blue: 0.3843137255, alpha: 1)),
         UIColor(#colorLiteral(red: 0.4666666667, green: 0.4549019608, blue: 0.4980392157, alpha: 1)),
         UIColor(#colorLiteral(red: 0.5254901961, green: 0.5333333333, blue: 0.5725490196, alpha: 1)),

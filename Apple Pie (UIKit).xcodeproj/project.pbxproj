@@ -34,6 +34,7 @@
 		9F7CBDC127AFDBF8008C27CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F7CBDC427AFDBF8008C27CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F7CBDC627AFDBF8008C27CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F98FE5F2809EE1000909DD0 /* @ ДЗ 2 «Apple Pie» Design.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "@ ДЗ 2 «Apple Pie» Design.sketch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 		9F7CBDAC27AFDBF7008C27CB = {
 			isa = PBXGroup;
 			children = (
+				9F98FE5F2809EE1000909DD0 /* @ ДЗ 2 «Apple Pie» Design.sketch */,
 				9F7CBDB727AFDBF7008C27CB /* Apple Pie (UIKit) */,
 				9F7CBDB627AFDBF7008C27CB /* Products */,
 			);
